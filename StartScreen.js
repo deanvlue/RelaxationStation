@@ -26,8 +26,9 @@ class StartScreen extends Component {
              <View style={styles.container}>
                 <TouchableOpacity style={styles.button}  onPress={ this.props.onStartHandler }>
                   <Image source={zenImage} style={styles.buttonImage}/>
+                  <Text style={styles.readyText}> I'm Ready to relax... </Text>
                 </TouchableOpacity>
-              <Text style={styles.readyText}> I'm Ready to relax... </Text>
+
             </View>
     )
   }
@@ -38,22 +39,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fefeea',
+    backgroundColor: '#889dad',
   },
   readyText:{
     fontSize: 20,
     fontStyle: 'italic',
-    color:'#333333',
+    color:'#f3f3f3',
+    marginTop: 15,
+    textAlign: 'center'
   },
   button:{
     backgroundColor:'#859a9b',
     borderRadius: 20,
     padding: 10,
     marginBottom: 20,
-    shadowColor: '#303838',
-    shadowOffset: {width: 0, height: 5},
-    shadowRadius: 10,
-    shadowOpacity: 0.35
   },
   buttonImage:{
     width: 200,

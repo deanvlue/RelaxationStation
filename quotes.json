@@ -1,0 +1,28 @@
+{
+  "quotes":[
+    {
+      "text"  :  "I am an optimist. It does not seem too much use being anything else....",
+      "source": "Winston Churchill"
+    },
+    {
+      "text"  :  "The bird of paradise alights only upon the hand that does not grasp.",
+      "source": "John Berry"
+    },
+    {
+      "text"  : "We cannot solve our problems with the same thinking we used when we created them.",
+      "source": "Albert Einstein"
+    },
+    {
+      "text"  : "We aim above the mark to hit the mark.",
+      "source": "Ralph Emerson"
+    },
+    {
+      "text"  : "He who does not trust enough, Will not be trusted.",
+      "source": "Lao Tzu"
+    },
+    {
+      "text"  : "Never apologize for showing feeling. When you do so, you apologize for truth.",
+      "source": "Benjamin Disraeli"
+    }
+  ]
+}

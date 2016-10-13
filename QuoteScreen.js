@@ -7,18 +7,25 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  Image
 } from 'react-native';
 
 import Quote from './Quote'
+import NextQuoteButton from './NextQuoteButton'
+
+const bgImage = require('./assets/bg.png')
 
 
 class QuoteScreen extends Component {
   render() {
     return (
+      <Image source={bgImage} style={styles.backgroundContainer}>
             <View style={styles.container}>              
-              <Quote quoteText='Esta es una prueba' quoteSource='-- Paulo Cuello'/>
+              <Quote quoteText={this.props.text} quoteSource={this.props.source}/>
+              <NextQuoteButton />
             </View>
+      </Image>
           )
     }
 }
@@ -28,8 +35,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fefeea',
+    alignItems: 'center'
+  },
+  backgroundContainer:{
+    flex:1,
+    resizeMode:'cover',
+    width: undefined,
+    height: undefined
   }
 });
 
