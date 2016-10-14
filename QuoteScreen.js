@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes} from 'react';
 import {
   StyleSheet,
   View,
@@ -23,7 +23,7 @@ class QuoteScreen extends Component {
       <Image source={bgImage} style={styles.backgroundContainer}>
             <View style={styles.container}>              
               <Quote quoteText={this.props.text} quoteSource={this.props.source}/>
-              <NextQuoteButton />
+              <NextQuoteButton onPress={this.props.onNextQuotePress}/>
             </View>
       </Image>
           )
@@ -44,5 +44,11 @@ const styles = StyleSheet.create({
     height: undefined
   }
 });
+
+QuoteScreen.propTypes ={
+  text: PropTypes.string.isRequired,
+  source: PropTypes.string.isrequired,
+  onNextQuotePress: PropTypes.func.isRequired,
+}
 
 export default QuoteScreen

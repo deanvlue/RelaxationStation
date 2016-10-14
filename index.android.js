@@ -23,8 +23,30 @@ const { quotes } = require('./quotes.json')
 const zenImage = require('./assets/zen.png'); 
 
 class RelaxationStation extends Component {
+  constructor(props){
+    super(props)
+
+    this.state={
+      quoteIndex: 2,
+    }
+  }
+
+  _incrementQuoteIndex(){
+    let newIndex
+
+    if(this.state.quoteIndex + 1 === quotes.length){
+      newsIndex=0
+    }else{
+      newIndex = this.state.quoteIndex + 1
+    }
+
+    this.setState({
+      quoteIndex: newIndex,
+    })
+  }
+
   render() {
-    const quote = quotes[3]
+    const quote = quotes[this.state.quoteIndex]
     return (
       <Navigator 
         initialRoute={{name:'StartScreen'}}
@@ -33,7 +55,7 @@ class RelaxationStation extends Component {
             case 'StartScreen':
               return <StartScreen onStartHandler={()=> navigator.push({name:'QuoteScreen'})} />
             case 'QuoteScreen':
-              return <QuoteScreen text={quote.text} source={quote.source}/>
+              return <QuoteScreen text={quote.text} source={quote.source} onNextQuotePress={this._incrementQuoteIndex}/>
           }
         }}
       />
