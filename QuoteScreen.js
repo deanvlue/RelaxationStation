@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 
 QuoteScreen.propTypes ={
   text: PropTypes.string.isRequired,
-  source: PropTypes.string.isrequired,
+  source: PropTypes.string.isRequired,
   onNextQuotePress: PropTypes.func.isRequired,
 }
 

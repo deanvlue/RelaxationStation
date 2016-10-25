@@ -29,13 +29,15 @@ class RelaxationStation extends Component {
     this.state={
       quoteIndex: 2,
     }
+
+    this._incrementQuoteIndex = this._incrementQuoteIndex.bind(this)
   }
 
   _incrementQuoteIndex(){
     let newIndex
 
     if(this.state.quoteIndex + 1 === quotes.length){
-      newsIndex=0
+      newIndex=0
     }else{
       newIndex = this.state.quoteIndex + 1
     }
