@@ -12,7 +12,8 @@ import {
   View,
   Image,
   Navigator,
-  TouchableOpacity
+  TouchableOpacity,
+  UIManager
 } from 'react-native';
 
 import StartScreen from './StartScreen'
@@ -25,13 +26,16 @@ const zenImage = require('./assets/zen.png');
 class RelaxationStation extends Component {
   constructor(props){
     super(props)
-
+       
     this.state={
       quoteIndex: 2,
     }
 
     this._incrementQuoteIndex = this._incrementQuoteIndex.bind(this)
+
+    UIManager.setLayoutAnimationEnabledExperimental(true)
   }
+
 
   _incrementQuoteIndex(){
     let newIndex
@@ -57,7 +61,12 @@ class RelaxationStation extends Component {
             case 'StartScreen':
               return <StartScreen onStartHandler={()=> navigator.push({name:'QuoteScreen'})} />
             case 'QuoteScreen':
-              return <QuoteScreen text={quote.text} source={quote.source} onNextQuotePress={this._incrementQuoteIndex}/>
+              return <QuoteScreen 
+                        qId={this.state.quoteIndex}
+                        text={quote.text} 
+                        source={quote.source} 
+                        onNextQuotePress={this._incrementQuoteIndex}
+                      />
           }
         }}
       />

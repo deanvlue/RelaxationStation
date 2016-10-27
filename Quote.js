@@ -28,17 +28,17 @@ const styles = StyleSheet.create({
   quoteText:{
     fontFamily:(Platform.OS === 'ios')?
       'AvenirNext-Bold':
-      'Verdana',
+      'helveticaneue_bold',
     fontSize: 36,
     fontWeight: 'bold',
     color: '#ffffff',
     marginVertical: 20,
-    textAlign: 'center'
+    textAlign: 'left'
   },
   sourceText:{
     fontFamily: (Platform.OS === 'ios')?
       'AvenirNext-Bold':
-      'Arial',
+      'helveticaneue_bold',
     fontSize: 20,
     color: '#f3f3f3',
     textAlign: 'right',
